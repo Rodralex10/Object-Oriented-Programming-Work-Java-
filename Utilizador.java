@@ -1,6 +1,7 @@
 package Trabalho;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 class Utilizador implements Serializable {
     private int id;
@@ -49,40 +50,5 @@ class Utilizador implements Serializable {
     }
 }
 
-class Cliente extends Utilizador {
 
-    public Cliente(String Username, String Password) {
-        super(Username, Password);
-    }
 
-   
-    @Override
-    public String toString() {
-        return "\nCliente{" + super.toString() + '}';
-    }
-}
-
-class Administrador extends Utilizador {
-    private String nivelAcesso;
-
-    public Administrador(String Username, String Password, String nivelAcesso) {
-        super(Username, Password);
-        this.nivelAcesso = nivelAcesso;
-    }
-
-    public String getNivelAcesso() {
-        return nivelAcesso;
-    }
-
-    public void setNivelAcesso(String nivelAcesso) {
-        this.nivelAcesso = nivelAcesso;
-    }
-
-    @Override
-    public String toString() {
-        return "\nAdministrador{" + super.toString() + ", NivelAcesso=" + nivelAcesso + "}";
-    }
-}
-
-        //Cliente cliente = new Cliente("joao123", "senha123", 1, "Rua A, 123");
-        //Administrador admin = new Administrador("admin123", "adminpass", 2, "Gerente");
