@@ -1,4 +1,5 @@
 package Trabalho;
+import Trabalho.FuncProdutos;
 import java.io.*;
 
 import java.util.ArrayList;
@@ -10,10 +11,15 @@ public class MainTrabalho {
 		int escolha,op1,op2,op3;
         ArrayList<Produto> produtos = carregarProdutos();
         ArrayList<Utilizador> users = carregarUtilizadores();
+        ArrayList<Fatura> faturas = new ArrayList<>();
         Utilizador.setUltimo(users.size());
         FuncLogin.setUtilizadores(users);
 		try {
-			 ObjectInputStream is = new ObjectInputStream( new FileInputStream("Loja.dat"));
+			 ObjectInputStream is = new ObjectInputStream( new FileInputStream("Loja.ser"));
+			 int ultimop = is.readInt();
+			 Produto.setUltimo(ultimop);
+			 int ultimou = is.readInt();
+			 Utilizador.setUltimo(ultimou);
 			 produtos = (ArrayList<Produto>) is.readObject();
 			 users = (ArrayList<Utilizador>) is.readObject();
 		 }
@@ -24,7 +30,7 @@ public class MainTrabalho {
 			 System.out.println(e.getMessage());
 		 }
 		do {
-		 System.out.println("1 - Registar");
+			 System.out.println("1 - Registar");
 	         System.out.println("2 - Login");
 	         System.out.println("3 - Sair");
 	         System.out.println("Escolha Uma Opção:");
@@ -67,22 +73,40 @@ public class MainTrabalho {
                         		op2 = FuncAuxiliares.menuAdminGestao();                                  
                                     	switch (op2) {
                                     	case 1:
-                                    		System.out.println(produtos);//Lista os Produtos Existentes bem como as suas Categorias e ID's
+                                    		FuncProdutos.inserirProduto(produtos);//Insere/Cria um produto Novo 
                                             break;
                                     	case 2:
-                                    		FuncProdutos.inserirProduto(produtos); //insere e cria um produto novo 
+                                    		System.out.println(produtos);//Lista os Produtos Existentes bem como as suas Categorias e ID's
                                             break;
                                     	case 3:
-                                    		FuncProdutos.removerProduto(produtos);//Remove um Produto que ja esteja registado 
+                                    		FuncProdutos.removerProduto(produtos);//Remove um Utilizador que ja esteja registado 
                                             break;
                                     	case 4:
                                     		FuncProdutos.alterarCategoria(produtos);//Alterar a categoria de Um produto existente
                                             break;
-                                    	case 5://atualizar detalhes do produto 
-                                    		FuncProdutos.gerirDetalhes(produtos);//por fazer 
+                                    	case 5:
+                                    		do {
+                                            	op3 = FuncAuxiliares.menuAdminStockManager();
+                                                	switch (op3) {
+                                                	case 1:
+                                                		FuncProdutos.stockVerify(produtos);                       
+                                                        break;
+                                                	case 2:
+                                                		FuncProdutos.adicionarStock(produtos);
+                                                        break;
+                                                	case 3:
+                                                		FuncProdutos.removerStock(produtos);
+                                                        break;
+                                                	case 4:
+                                                		System.out.println("Sucesso!!\n\n");
+                                                        break;
+                                                    default:
+                                                        System.out.println("Opção inválida, tente novamente.\n");
+                                                        break;
+                                                	}
+                                            	}while (op3 != 4);
                                             break;
-                                    	case 6: //gerir descontos
-                                    		FuncProdutos.gerirDescontos(produtos); //por fazer
+                                    	case 6:
                                             break;
                                     	case 7:
                                     		System.out.println("Sucesso!!\n\n");
@@ -97,18 +121,17 @@ public class MainTrabalho {
                         		do {
                         			op2 = FuncAuxiliares.menuAdminShopPerformance();
                                     	switch (op2) {
-                                    	case 1: //relatorio de vendas   		
+                                    	case 1:                              
                                             break;
-                                    	case 2: //análise de estoque
+                                    	case 2:
                                             break;
-                                    	case 3: //receita total e lucros
+                                    	case 3:
                                             break;
-                                    	case 4: //desempenho de produtos
+                                    	case 4:
                                             break;
-                                    	case 5: // satisfação do cliente 
+                                    	case 5:
                                             break;
                                     	case 6:
-                                    		FuncAuxiliares.Categoriamaiscomum(produtos); //categoria mais comum 
                                             break;
                                     	case 7:
                                     		System.out.println("Sucesso!!\n\n");
@@ -128,63 +151,110 @@ public class MainTrabalho {
                         	}
                     	}while (op1 !=4);
                     } else if (user instanceof Cliente) {
-                    	do {
-                    	op1 = FuncAuxiliares.menuUser();
-                    		switch (op1) {
-                    		case 1://listar categorias
-                    			FuncAuxiliares.listarcategorias(produtos); //por fazer 
-                    			break;
-                    		case 2://consultar produto dado nome 
-                    			break;
-                    			FuncAuxiliares.consultarpornome(produtos); //por fazer 
-                    		case 3: //consultar produtos de categorias
-                    			
-                    			
-                    			break;
-                    		case 4: //consultar produto dado ID 
-                    		
-                    			break;
-                    		case 5: //comprar produto por nome
-                    	
-                    			break;
-                    		case 6: //comprar produto por ID 
-                    			FuncLogin.register();
-                    			break;
-                    		case 7:	
-                    			System.out.println ("Sucesso!!\n\n");
-                                break;
-                    		default:
-                    			System.out.println("Opção inválida, tente novamente.");
-                    			break;
-                    		}
-                    	}while (op1 !=7);
+                        Cliente cliente = (Cliente) user;
+                        do {
+                            op1 = FuncAuxiliares.menuCliente();
+                            switch (op1) {
+                                case 1:
+                                	do {
+                                    	op2 = FuncAuxiliares.menuConsultarProdutos();
+                                        	switch (op2) {
+                                        	case 1:
+                                        		FuncProdutosClientes.listarCategorias(produtos);                             
+                                                break;
+                                        	case 2:
+                                        		FuncProdutosClientes.consultarProdutoPorNome(produtos);
+                                                break;
+                                        	case 3:
+                                        		FuncProdutosClientes.consultarProdutosPorCategoria(produtos);
+                                                break;
+                                        	case 4:
+                                        		FuncProdutosClientes.consultarProdutoPorID(produtos);
+                                                break;
+                                        	case 5:
+                                        		FuncVendas.addProdutoAoCarroID(produtos, cliente);
+                                                break;
+                                        	case 6:
+                                        		FuncVendas.addProdutoAoCarroNome(produtos, cliente);
+                                                break;
+                                        	case 7:
+                                        		System.out.println("Sucesso!!\n\n");
+                                                break;
+                                            default:
+                                                System.out.println("Opção inválida, tente novamente.\n");
+                                                break;
+                                        	}
+                                    	}while (op2 !=7);
+                                    break;
+                                case 2:
+                                	do {
+                                    	op2 = FuncAuxiliares.menuCarrinho();
+                                        	switch (op2) {
+                                        	case 1:
+                                        		FuncVendas.listarCarrinho(cliente);                             
+                                                break;
+                                        	case 2:
+                                        		
+                                                break;
+                                        	case 3:
+                                        		FuncVendas.finalizarCompra(cliente, faturas);
+                                                break;
+                                        	case 4:
+                                        		FuncVendas.limparCarrinho(cliente);
+                                                break;
+                                        	case 5:
+                                        		System.out.println("Sucesso!!\n\n");
+                                                break;
+                                            default:
+                                                System.out.println("Opção inválida, tente novamente.\n");
+                                                break;
+                                        	}
+                                    	}while (op2 !=5);
+                                    break;
+                                case 3:
+                                	FuncVendas.listarCarrinho(cliente);
+                                    break;                  
+                                case 4:
+                                    System.out.println("Saindo...");
+                                    break;
+                                default:
+                                    System.out.println("Opção inválida, tente novamente.");
+                            }
+                        } while (op1 != 4);
                     }
                 }
                 break;
             case 3:
                 System.out.println("Saindo...");
                 break;
+            case 4:
+                System.out.println("Saindo...");
+                break;
             default:
                 System.out.println("Opção inválida, tente novamente.");
                 break;
 			}
-		} while (escolha != 3);
+		} while (escolha != 4);
 	}
+	
 	private static ArrayList<Utilizador> carregarUtilizadores() {
-        try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Utilizadores.ser"))) {
-            return (ArrayList<Utilizador>) is.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Erro ao carregar utilizadores: " + e.getMessage());
-            return new ArrayList<>();
-        }
-    }
+	    try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Utilizadores.ser"))) {
+	        Utilizador.setUltimo(is.readInt());
+	        return (ArrayList<Utilizador>) is.readObject();
+	    } catch (IOException | ClassNotFoundException e) {
+	        System.out.println("Erro ao carregar utilizadores: " + e.getMessage());
+	        return new ArrayList<>();
+	    }
+	}
 
-    private static ArrayList<Produto> carregarProdutos() {
-        try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Produtos.ser"))) {
-            return (ArrayList<Produto>) is.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Erro ao carregar produtos: " + e.getMessage());
-            return new ArrayList<>();
-        }
-    }	
+
+	private static ArrayList<Produto> carregarProdutos() {
+	    try (ObjectInputStream is = new ObjectInputStream(new FileInputStream("Produtos.ser"))) {
+	        Produto.setUltimo(is.readInt()); // Carregar o último ID de produto
+	        return (ArrayList<Produto>) is.readObject(); // Carregar a lista de produtos
+	    } catch (IOException | ClassNotFoundException e) {
+	        System.out.println("Erro ao carregar produtos: " + e.getMessage());
+	        return new ArrayList<>();
+	    }
+	}	
 }
