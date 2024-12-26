@@ -215,7 +215,7 @@ public class MainTrabalho {
                                 	FuncVendas.listarCarrinho(cliente);
                                     break;                  
                                 case 4:
-                                    System.out.println("Saindo...");
+                                    System.out.println("A sair...");
                                     break;
                                 default:
                                     System.out.println("Opção inválida, tente novamente.");
@@ -225,10 +225,10 @@ public class MainTrabalho {
                 }
                 break;
             case 3:
-                System.out.println("Saindo...");
+                System.out.println("A sair...");
                 break;
             case 4:
-                System.out.println("Saindo...");
+                System.out.println("A sair...");
                 break;
             default:
                 System.out.println("Opção inválida, tente novamente.");
