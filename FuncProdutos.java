@@ -18,7 +18,7 @@ public class FuncProdutos {
         String NomeP = Ler.umaString();
         System.out.println("Qual o Preco do Produto? ");
         double PrecoP = Ler.umDouble();
-        System.out.println("Qual a IdadeIndicada do Produto? ");
+        System.out.println("Qual a Idade Indicada do Produto? ");
         String IdadeIndicadaP = Ler.umaString();
         System.out.println("Qual a Descricao do Produto? ");
         String DescricaoP = Ler.umaString();
@@ -35,7 +35,7 @@ public class FuncProdutos {
     }
 
     public static void removerProduto(ArrayList<Produto> Produtos) {
-        System.out.println("Qual o id do Produto? ");
+        System.out.println("Qual o ID do Produto? ");
 
         int num = Ler.umInt();
 
@@ -43,7 +43,7 @@ public class FuncProdutos {
         for (int i = 0; i < Produtos.size(); i++) {
             if (Produtos.get(i).getId() == num) {
                 Produtos.remove(i);
-                System.out.println("Produto apagado");
+                System.out.println("Produto apagado.");
                 // Atualizar ficheiro após a remoção
                 atualizarFicheiro(Produtos);
                 return;
@@ -64,7 +64,7 @@ public class FuncProdutos {
                 return;
             }
         }
-        System.out.println("Nenhum Produto encontrado com o Categoria especificado.");
+        System.out.println("Nenhum Produto foi encontrado com a Categoria especificada.");
     }
     
     
@@ -73,14 +73,14 @@ public class FuncProdutos {
 
         int num = Ler.umInt();
         
-        System.out.println("Qual a novo Categoria do Produto? ");
+        System.out.println("Qual a nova Categoria do Produto? ");
 
         String novoCategoria = Ler.umaString();
         
         for (int i = 0; i < Produtos.size(); i++) {
         	if (Produtos.get(i).getId() == num) {
                 Produtos.get(i).setCategoria(novoCategoria);
-                System.out.println("Categoria alterado");
+                System.out.println("Categoria alterada.");
                 // Atualizar ficheiro após a alteraçao
                 atualizarFicheiro(Produtos);
                 return;
