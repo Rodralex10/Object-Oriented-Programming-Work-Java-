@@ -69,7 +69,7 @@ public class FuncProdutos {
     
     
     public static void alterarCategoria(ArrayList<Produto> Produtos) {
-    	System.out.println("Qual o id do Produto? ");
+    	System.out.println("Qual o ID do Produto? ");
 
         int num = Ler.umInt();
         
@@ -86,7 +86,7 @@ public class FuncProdutos {
                 return;
             }
         }
-        System.out.println("Nenhum Produto encontrado com o id especificado.");
+        System.out.println("Nenhum Produto encontrado com o ID especificado.");
     }
     
     public static void Categoriamaiscomum(ArrayList<Produto> Produtos) {
