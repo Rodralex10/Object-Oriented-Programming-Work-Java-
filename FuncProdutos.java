@@ -50,7 +50,7 @@ public class FuncProdutos {
             }
         }
 
-        System.out.println("Nenhum Produto encontrado com o id especificado.");
+        System.out.println("Nenhum Produto encontrado com o ID especificado.");
     }
     
     public static void consultarCategoria(ArrayList<Produto> Produtos) {
