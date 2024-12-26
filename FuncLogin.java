@@ -25,7 +25,7 @@ public class FuncLogin {
     public static void register() {
         String Username, Password, ConfirmPass;
         
-        System.out.println("Username:  ");
+        System.out.println("Nome de Utilizador:  ");
         Username = Ler.umaString();
         
         System.out.println("\nPassword:  ");
@@ -40,7 +40,7 @@ public class FuncLogin {
             return;
         }for (Utilizador u : Utilizadores) {
             if (u.getUsername().equals(Username)) {
-                System.out.println("Este nome de utilizador já está registrado. Escolha outro.");
+                System.out.println("Este Nome de Utilizador já está registado. Escolha outro.");
                 return;
             }
         }
@@ -49,7 +49,7 @@ public class FuncLogin {
         Cliente novoCliente = new Cliente(Username, Password);
         Utilizadores.add(novoCliente);
         atualizarFicheiro();
-        System.out.println("Utilizador registrado com sucesso!");
+        System.out.println("Utilizador registado com sucesso!");
     }
 
     // Função para fazer login
@@ -74,12 +74,12 @@ public class FuncLogin {
                 return u;
             }
         }
-        System.out.println("Nome de utilizador ou senha incorretos.");
+        System.out.println("Nome de Utilizador ou senha incorretos.");
         return null;
     }
     
     public static void removerUtilizador() {
-        System.out.println("Qual o o Username da conta? ");
+        System.out.println("Qual o Nome de Utilizador da conta? ");
 
         String username = Ler.umaString();
 
@@ -106,7 +106,7 @@ public class FuncLogin {
     public static void adminregister() {
         String Username, Password, ConfirmPass;
         
-        System.out.println("Username:  ");
+        System.out.println("Nome de Utilizador:  ");
         Username = Ler.umaString();
         
         System.out.println("\nPassword:  ");
@@ -121,14 +121,14 @@ public class FuncLogin {
             return;
         }for (Utilizador u : Utilizadores) {
             if (u.getUsername().equals(Username)) {
-                System.out.println("Este nome de utilizador já está registrado. Escolha outro.");
+                System.out.println("Este Nome de utilizador já está registado. Escolha outro.");
                 return;
             }
         }
         Administrador newadmin = new Administrador(Username, Password, "Admin");
         Utilizadores.add(newadmin);
         atualizarFicheiro();
-        System.out.println("Utilizador registrado com sucesso!");
+        System.out.println("Utilizador registado com sucesso!");
     }
 
     // Atualizar o ficheiro Loja.dat com os Utilizadores registrados
