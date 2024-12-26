@@ -121,7 +121,7 @@ public class FuncLogin {
             return;
         }for (Utilizador u : Utilizadores) {
             if (u.getUsername().equals(Username)) {
-                System.out.println("Este Nome de utilizador já está registado. Escolha outro.");
+                System.out.println("Este Nome de Utilizador já está registado. Escolha outro.");
                 return;
             }
         }
