@@ -49,10 +49,30 @@ public class FuncProdutosClientes {
             System.out.println("Nenhum Produto foi encontrado na Categoria: " + categoria);
         }
     }
+    
+    public static void consultarProdutosPorIdade(ArrayList<Produto> produtos) {
+        System.out.println("Digite a Idade Idicada para os Produtos que procura:");
+        String idadeIndicada = Ler.umaString();
+        boolean encontrado = false;
+
+        System.out.println("Produtos recomendados para Idade Indicada: " + idadeIndicada);
+        System.out.println("=========================================");
+
+        for (Produto produto : produtos) {
+            if (produto.getIdadeindicada().equalsIgnoreCase(idadeIndicada)) {
+                System.out.println(produto);
+                encontrado = true;
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("Nenhum Produto encontrado para a Idade Indicada.");
+        }
+    }
 
     // Método para consultar um produto pelo ID
     public static void consultarProdutoPorID(ArrayList<Produto> produtos) {
-        System.out.println("Digite o ID do Produto:");
+        System.out.println("Digite o ID do produto:");
         int id = Ler.umInt();
         boolean encontrado = false;
 
