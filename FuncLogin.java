@@ -60,8 +60,7 @@ public class FuncLogin {
         if (Utilizadores.isEmpty()) {
             Administrador admin = new Administrador("admin", "admin", "Admin");
             Utilizadores.add(admin);
-        }
-
+        }   
         System.out.println("Username:  ");
         Username = Ler.umaString();
 
@@ -70,7 +69,7 @@ public class FuncLogin {
 
         for (Utilizador u : Utilizadores) {
             if (u.getUsername().equals(Username) && u.getPassword().equals(Password)) {
-                System.out.println("Login efetuado com sucesso! Bem-vindo, " + Username + " são " + today);
+                System.out.println("Login efetuado com sucesso! Bem-vindo, " + Username + " é dia " + today);
                 return u;
             }
         }
