@@ -17,7 +17,7 @@ public class FuncAuxiliares {
 		 int opcao;
 		 System.out.println("1 - Gestão de Utilizadores");
 		 System.out.println("2 - Gestão de Loja/Stocks");
-		 System.out.println("3 - Performance/Estatisticas da Loja");
+		 System.out.println("3 - Estatisticas da Loja");
 		 System.out.println("4 - Logout");
 		 System.out.println("Qual a sua opção:");
 		 opcao = Ler.umInt();
@@ -31,7 +31,7 @@ public class FuncAuxiliares {
 		 System.out.println("3 - Apagar Produto");
 		 System.out.println("4 - Alterar Categoria de um produto");
 		 System.out.println("5 - Gerenciador de Stocks");
-		 System.out.println("6 – Por Implementar");
+		 System.out.println("6 – Por Implementar?");
 		 System.out.println("7 - Sair");
 		 System.out.println("Qual a sua opção:");
 		 opcao = Ler.umInt();
@@ -53,8 +53,8 @@ public class FuncAuxiliares {
 		 int opcao;
 		 System.out.println("1 - Produtos Mais e Menos Vendidos");
 		 System.out.println("2 - Dois Melhores Clientes");
-		 System.out.println("3 - Por Implementar");
-		 System.out.println("4 - Por Implementar");
+		 System.out.println("3 - Por Implementar (Valor Faturado Diário)?");
+		 System.out.println("4 - Por Implementar (Número de Vendas Diário)?");
 		 System.out.println("5 - Por Implementar");
 		 System.out.println("6 – Por Implementar");
 		 System.out.println("7 - Sair");
@@ -91,7 +91,7 @@ public class FuncAuxiliares {
 	
 	public static int menuCliente(){ // função na classe do main
 		 int opcao;
-		 System.out.println("1 - Pesquisar No Catalogo");
+		 System.out.println("1 - Pesquisar No Catálogo");
 		 System.out.println("2 - Carrinho de Compras");
 		 System.out.println("3 - Consultar Estatisticas Pessoais e Faturas");
 		 System.out.println("4 - Sair");

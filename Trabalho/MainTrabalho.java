@@ -15,7 +15,7 @@ public class MainTrabalho {
         Utilizador.setUltimo(users.size());
         FuncLogin.setUtilizadores(users);
 		do {
-			 System.out.println("1 - Registar");
+			 System.out.println("1 - Registo");
 	         System.out.println("2 - Login");
 	         System.out.println("3 - Sair");
 	         System.out.println("Escolha Uma Opção:");
@@ -204,7 +204,7 @@ public class MainTrabalho {
                                 	FuncVendas.listarCarrinho(cliente);
                                     break;                  
                                 case 4:
-                                    System.out.println("Saindo...");
+                                    System.out.println("A sair...");
                                     break;
                                 default:
                                     System.out.println("Opção inválida, tente novamente.");
@@ -214,10 +214,10 @@ public class MainTrabalho {
                 }
                 break;
             case 3:
-                System.out.println("Saindo...");
+                System.out.println("A sair...");
                 break;
             case 4:
-                System.out.println("Saindo...");
+                System.out.println("A sair...");
                 break;
             default:
                 System.out.println("Opção inválida, tente novamente.");

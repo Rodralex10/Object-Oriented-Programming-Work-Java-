@@ -9,7 +9,7 @@ public class FuncVendas {
 	    ArrayList<Produto> carrinhoProdutos = cliente.getCarrinho();
 
 	    if (carrinhoProdutos.isEmpty()) {
-	        System.out.println("O carrinho está vazio.");
+	        System.out.println("O carrinho está vazio!");
 	        return;
 	    }
 
@@ -27,7 +27,7 @@ public class FuncVendas {
 	
 	public static void listarCarrinho(Cliente cliente) {
 	    if (cliente.getCarrinho().isEmpty()) {
-	        System.out.println("O carrinho está vazio.");
+	        System.out.println("O carrinho está vazio!");
 	    } else {
 	        System.out.println("Produtos no carrinho:");
 	        for (Produto produto : cliente.getCarrinho()) {
@@ -58,12 +58,12 @@ public class FuncVendas {
 	                System.out.println("Produto adicionado ao carrinho com sucesso!");
 	                return;
 	            } else {
-	                System.out.println("Produto sem stock.");
+	                System.out.println("Produto sem stock!");
 	                return;
 	            }
 	        }
 	    }
-	    System.out.println("Produto não encontrado.");
+	    System.out.println("Produto não encontrado!");
 	}
 	
 	public static void addProdutoAoCarroID(ArrayList<Produto> produtos, Cliente cliente) {
@@ -78,19 +78,19 @@ public class FuncVendas {
                     System.out.println("Produto adicionado ao carrinho com sucesso!");
                     return;
                 } else {
-                    System.out.println("Produto sem stock.");
+                    System.out.println("Produto sem stock!");
                     return;
                 }
             }
         }
-        System.out.println("Produto não encontrado.");
+        System.out.println("Produto não encontrado!");
     }
 	
 	public static void salvarFaturas(ArrayList<Fatura> faturas) {
 	    try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("Faturas.ser"))) {
 	        os.writeInt(Fatura.getUltimo()); // Salvar o último ID usado
 	        os.writeObject(faturas); // Salvar a lista de faturas
-	        System.out.println("Faturas salvas com sucesso.");
+	        System.out.println("Faturas salvas com sucesso!");
 	    } catch (IOException e) {
 	        System.out.println("Erro ao salvar faturas: " + e.getMessage());
 	    }

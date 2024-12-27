@@ -16,7 +16,7 @@ public class FuncProdutosClientes {
 
     // Método para consultar um produto pelo nome
     public static void consultarProdutoPorNome(ArrayList<Produto> produtos) {
-        System.out.println("Digite o nome do produto:");
+        System.out.println("Digite o Nome do Produto:");
         String nome = Ler.umaString();
         boolean encontrado = false;
 
@@ -28,13 +28,13 @@ public class FuncProdutosClientes {
         }
 
         if (!encontrado) {
-            System.out.println("Nenhum produto encontrado com o nome: " + nome);
+            System.out.println("Nenhum Produto foi encontrado com o Nome: " + nome);
         }
     }
 
     // Método para consultar produtos de uma categoria
     public static void consultarProdutosPorCategoria(ArrayList<Produto> produtos) {
-        System.out.println("Digite a categoria:");
+        System.out.println("Digite a Categoria do Produto:");
         String categoria = Ler.umaString();
         boolean encontrado = false;
 
@@ -46,7 +46,7 @@ public class FuncProdutosClientes {
         }
 
         if (!encontrado) {
-            System.out.println("Nenhum produto encontrado na categoria: " + categoria);
+            System.out.println("Nenhum Produto foi ncontrado na Categoria: " + categoria);
         }
     }
 
@@ -65,7 +65,7 @@ public class FuncProdutosClientes {
         }
 
         if (!encontrado) {
-            System.out.println("Nenhum produto encontrado com o ID: " + id);
+            System.out.println("Nenhum Produto foi encontrado com o ID: " + id);
         }
     }
 }

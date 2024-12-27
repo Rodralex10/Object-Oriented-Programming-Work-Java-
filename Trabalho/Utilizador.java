@@ -46,7 +46,7 @@ class Utilizador implements Serializable {
 
     @Override
     public String toString() {
-        return "id=" + id + ", Username=" + Username + ", Password=" + Password;
+        return "ID=" + id + ", Nome de Utilizador=" + Username + ", Password=" + Password;
     }
 }
 

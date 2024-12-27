@@ -25,22 +25,24 @@ public class FuncLogin {
     public static void register() {
         String Username, Password, ConfirmPass;
         
-        System.out.println("Username:  ");
+        System.out.println("Nome de Utilizador:  ");
         Username = Ler.umaString();
         
         System.out.println("\nPassword:  ");
         Password = Ler.umaString();
         
-        System.out.println("\nConfirm Password: ");
+        System.out.println("\nConfirmar Password: ");
         ConfirmPass = Ler.umaString();
 
         // Verificar se as senhas coincidem
         if (!Password.equals(ConfirmPass)) {
-            System.out.println("Passwords não coincidem. Tente novamente.");
+            System.out.println("Passwords não coincidem!");
+            System.out.println("Tente novamente:");
             return;
         }for (Utilizador u : Utilizadores) {
             if (u.getUsername().equals(Username)) {
-                System.out.println("Este nome de utilizador já está registrado. Escolha outro.");
+                System.out.println("Este Nome de Utilizador já está registado!");
+                System.out.println("Escolha outro:");
                 return;
             }
         }
@@ -49,7 +51,7 @@ public class FuncLogin {
         Cliente novoCliente = new Cliente(Username, Password);
         Utilizadores.add(novoCliente);
         atualizarFicheiro();
-        System.out.println("Utilizador registrado com sucesso!");
+        System.out.println("Nome de Utilizador registado com sucesso!");
     }
 
     // Função para fazer login
@@ -62,7 +64,7 @@ public class FuncLogin {
             Utilizadores.add(admin);
         }
 
-        System.out.println("Username:  ");
+        System.out.println("Nome de Utilizador:  ");
         Username = Ler.umaString();
 
         System.out.println("\nPassword:  ");
@@ -70,16 +72,17 @@ public class FuncLogin {
 
         for (Utilizador u : Utilizadores) {
             if (u.getUsername().equals(Username) && u.getPassword().equals(Password)) {
-                System.out.println("Login efetuado com sucesso! Bem-vindo, " + Username + " são " + today);
+                System.out.println("Login efetuado com sucesso!");
+                System.out.println("Bem-vindo, " + Username + ", hoje é dia " + today);
                 return u;
             }
         }
-        System.out.println("Nome de utilizador ou senha incorretos.");
+        System.out.println("Nome de utilizador ou senha incorretos!");
         return null;
     }
     
     public static void removerUtilizador() {
-        System.out.println("Qual o o Username da conta? ");
+        System.out.println("Qual o Nome de Utilizador da conta? ");
 
         String username = Ler.umaString();
 
@@ -94,41 +97,43 @@ public class FuncLogin {
                     System.out.println("Utilizador removido com sucesso!");
                     return;
                 } else {
-                    System.out.println("Remoção cancelada.");
+                    System.out.println("Remoção cancelada!");
                     return;
                 }
             }
          }
-        System.out.println("Utilizador não encontrado.");
+        System.out.println("Utilizador não encontrado!");
         return;
      }
     
     public static void adminregister() {
         String Username, Password, ConfirmPass;
         
-        System.out.println("Username:  ");
+        System.out.println("Nome de Utilizador:  ");
         Username = Ler.umaString();
         
         System.out.println("\nPassword:  ");
         Password = Ler.umaString();
         
-        System.out.println("\nConfirm Password: ");
+        System.out.println("\nConfirmar Password: ");
         ConfirmPass = Ler.umaString();
 
         // Verificar se as senhas coincidem
         if (!Password.equals(ConfirmPass)) {
-            System.out.println("Passwords não coincidem. Tente novamente.");
+        	System.out.println("Passwords não coincidem!");
+            System.out.println("Tente novamente:");
             return;
         }for (Utilizador u : Utilizadores) {
             if (u.getUsername().equals(Username)) {
-                System.out.println("Este nome de utilizador já está registrado. Escolha outro.");
+            	System.out.println("Este Nome de Utilizador já está registado!");
+                System.out.println("Escolha outro:");
                 return;
             }
         }
         Administrador newadmin = new Administrador(Username, Password, "Admin");
         Utilizadores.add(newadmin);
         atualizarFicheiro();
-        System.out.println("Utilizador registrado com sucesso!");
+        System.out.println("Nome de Utilizador registado com sucesso!");
     }
 
     // Atualizar o ficheiro Loja.dat com os Utilizadores registrados
