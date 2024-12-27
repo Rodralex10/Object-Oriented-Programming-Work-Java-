@@ -44,15 +44,15 @@ public class MainTrabalho {
                                     	case 3:
                                     		FuncLogin.adminregister();//Criar Um novo utilizador com Permissões de Admin
                                             break;
-                                    	case 4:
+                                    	case 0:
                                     		System.out.println("Sucesso!!\n\n");
                                             break;
                                         default:
-                                            System.out.println("Opção inválida!");
-                                            System.out.println("Tente novamente:\n");
+                                        	System.out.println("\nOpção inválida!");
+                                     		System.out.println("Tente novamente:\n");
                                             break;
                                     	}
-                                	}while (op2 !=4);
+                                	}while (op2 != 0);
                                 break;
                         	case 2:
                         		do {
@@ -83,27 +83,25 @@ public class MainTrabalho {
                                                 	case 3:
                                                 		FuncProdutos.removerStock(produtos);
                                                         break;
-                                                	case 4:
+                                                	case 0:
                                                 		System.out.println("Sucesso!!\n\n");
                                                         break;
                                                     default:
-                                                    	  System.out.println("Opção inválida!");
-                                           		  System.out.println("Tente novamente:\n");
+                                                    	System.out.println("\nOpção inválida!");
+                                                 		System.out.println("Tente novamente:\n");
                                                         break;
                                                 	}
-                                            	}while (op3 != 4);
+                                            	}while (op3 != 0);
                                             break;
-                                    	case 6:
-                                            break;
-                                    	case 7:
+                                    	case 0:
                                     		System.out.println("Sucesso!!\n\n");
                                             break;
                                         default:
-                                        System.out.println("Opção inválida!");
-                                        System.out.println("Tente novamente:\n");
+                                        	System.out.println("\nOpção inválida!");
+                                     		System.out.println("Tente novamente:\n");
                                             break;
                                     	}
-                                	}while (op2 !=7);
+                                	}while (op2 != 0);
                                 break;
                         	case 3:
                         		do {
@@ -126,25 +124,25 @@ public class MainTrabalho {
                                             break;
                                     	case 6:
                                             break;
-                                    	case 7:
+                                    	case 0:
                                     		System.out.println("Sucesso!!\n\n");
                                             break;
                                         default:
-                                        System.out.println("Opção inválida!");
-                                        System.out.println("Tente novamente:\n");
+                                        	System.out.println("\nOpção inválida!");
+                                     		System.out.println("Tente novamente:\n");
                                             break;
                                     	}
-                                	}while (op2 !=7);
+                                	}while (op2 !=0);
                                 break;
-                        	case 4:
+                        	case 0:
                         		System.out.println("Sucesso!!\n\n");
                                 break;
                             default:
-                                System.out.println("Opção inválida!");
-                                System.out.println("Tente novamente:\n");
+                            	System.out.println("\nOpção inválida!");
+                         		System.out.println("Tente novamente:\n");
                                 break;
                         	}
-                    	}while (op1 !=4);
+                    	}while (op1 !=0);
                     } else if (user instanceof Cliente) {
                         Cliente cliente = (Cliente) user;
                         do {
@@ -167,20 +165,22 @@ public class MainTrabalho {
                                         		FuncProdutosClientes.consultarProdutoPorID(produtos);
                                                 break;
                                         	case 5:
-                                        		FuncVendas.addProdutoAoCarroID(produtos, cliente);
+                                        		FuncProdutosClientes.consultarProdutosPorIdade(produtos);
                                                 break;
                                         	case 6:
-                                        		FuncVendas.addProdutoAoCarroNome(produtos, cliente);
+                                        		FuncVendas.addProdutoAoCarroID(produtos, cliente);
                                                 break;
                                         	case 7:
+                                        		FuncVendas.addProdutoAoCarroNome(produtos, cliente);
+                                                break;
+                                        	case 0:
                                         		System.out.println("Sucesso!!\n\n");
                                                 break;
                                             default:
-                                            System.out.println("Opção inválida!");
-                                            System.out.println("Tente novamente:\n");
-                                                break;
+                                            	System.out.println("\nOpção inválida!");
+                                         		System.out.println("Tente novamente:\n");
                                         	}
-                                    	}while (op2 !=7);
+                                    	}while (op2 !=0);
                                     break;
                                 case 2:
                                 	do {
@@ -198,27 +198,27 @@ public class MainTrabalho {
                                         	case 4:
                                         		FuncVendas.limparCarrinho(cliente);
                                                 break;
-                                        	case 5:
+                                        	case 0:
                                         		System.out.println("Sucesso!!\n\n");
                                                 break;
                                             default:
-                                        System.out.println("Opção inválida!");
-                                        System.out.println("Tente novamente:\n");
+                                            	System.out.println("\nOpção inválida!");
+                                         		System.out.println("Tente novamente:\n");
                                                 break;
                                         	}
-                                    	}while (op2 !=5);
+                                    	}while (op2 !=0);
                                     break;
                                 case 3:
                                 	FuncVendas.listarFaturasDoCliente(cliente, faturas);
                                     break;                  
-                                case 4:
+                                case 0:
                                     System.out.println("A sair...");
                                     break;
                                 default:
-                                System.out.println("Opção inválida!");
-                                System.out.println("Tente novamente:\n");
+                                	System.out.println("\nOpção inválida!");
+                             		System.out.println("Tente novamente:\n");
                             }
-                        } while (op1 != 4);
+                        } while (op1 != 0);
                     }
                 }
                 break;
@@ -229,8 +229,8 @@ public class MainTrabalho {
                 System.out.println("A sair...");
                 break;
             default:
-            	System.out.println("Opção inválida!");
-                System.out.println("Tente novamente:\n");
+            	System.out.println("\nOpção inválida!");
+         		System.out.println("Tente novamente:\n");
                 break;
 			}
 		} while (escolha != 4);
@@ -241,7 +241,7 @@ public class MainTrabalho {
 	        Utilizador.setUltimo(is.readInt());
 	        return (ArrayList<Utilizador>) is.readObject();
 	    } catch (IOException | ClassNotFoundException e) {
-	        System.out.println("Erro ao carregar os Utilizadores: " + e.getMessage());
+	        System.out.println("Erro ao carregar utilizadores: " + e.getMessage());
 	        return new ArrayList<>();
 	    }
 	}
@@ -252,7 +252,7 @@ public class MainTrabalho {
 	        Produto.setUltimo(is.readInt()); // Carregar o último ID de produto
 	        return (ArrayList<Produto>) is.readObject(); // Carregar a lista de produtos
 	    } catch (IOException | ClassNotFoundException e) {
-	        System.out.println("Erro ao carregar os Produtos: " + e.getMessage());
+	        System.out.println("Erro ao carregar produtos: " + e.getMessage());
 	        return new ArrayList<>();
 	    }
 	}
@@ -262,7 +262,7 @@ public class MainTrabalho {
 	    	Fatura.setUltimo(is.readInt());
 	    	return (ArrayList<Fatura>) is.readObject(); // Carregar a lista de faturas
 	    } catch (IOException | ClassNotFoundException e) {
-	        System.out.println("Erro ao carregar as Faturas: " + e.getMessage());
+	        System.out.println("Erro ao carregar as faturas: " + e.getMessage());
 	        return new ArrayList<>();
 	    }
 	}	
