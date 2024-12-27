@@ -16,17 +16,17 @@ public class FuncProdutos {
         String CategoriaP = Ler.umaString();
         System.out.println("Qual o Nome do Produto? ");
         String NomeP = Ler.umaString();
-        System.out.println("Qual o Preco do Produto? ");
+        System.out.println("Qual o Preço do Produto? ");
         double PrecoP = Ler.umDouble();
-        System.out.println("Qual a Idade Indicada do Produto? ");
+        System.out.println("Qual a Idade Indicada para utilização do Produto? ");
         String IdadeIndicadaP = Ler.umaString();
-        System.out.println("Qual a Descricao do Produto? ");
+        System.out.println("Qual a Descrição do Produto? ");
         String DescricaoP = Ler.umaString();
         System.out.println("Qual o Stock do Produto? ");
         int StockP = Ler.umInt();
         
         Produto l = new Produto(CategoriaP, NomeP, PrecoP, IdadeIndicadaP,DescricaoP,StockP);
-        System.out.println("O Produto: " + NomeP + " , foi criado e adicionado a Categoria " + CategoriaP + ", com preço base de: " + PrecoP + "€ , com Cerca de "+StockP+" de Unidades disponiveis." );
+        System.out.println("O Produto: " + NomeP + " , foi criado e adicionado à Categoria " + CategoriaP + ", com Preço Base de: " + PrecoP + "€ , com Cerca de "+StockP+" de Unidades Disponíveis." );
 
         // Adicionar o novo Produto à lista
         Produtos.add(l);
@@ -43,18 +43,18 @@ public class FuncProdutos {
         for (int i = 0; i < Produtos.size(); i++) {
             if (Produtos.get(i).getId() == num) {
                 Produtos.remove(i);
-                System.out.println("Produto apagado.");
+                System.out.println("Produto Apagado!");
                 // Atualizar ficheiro após a remoção
                 atualizarFicheiro(Produtos);
                 return;
             }
         }
 
-        System.out.println("Nenhum Produto encontrado com o ID especificado.");
+        System.out.println("Nenhum Produto foi encontrado com o ID Especificado!");
     }
     
     public static void consultarCategoria(ArrayList<Produto> Produtos) {
-    	System.out.println("Qual o Categoria do Produto? ");
+    	System.out.println("Qual a Categoria do Produto? ");
 
         String Categoria = Ler.umaString();
         
@@ -64,7 +64,7 @@ public class FuncProdutos {
                 return;
             }
         }
-        System.out.println("Nenhum Produto foi encontrado com a Categoria especificada.");
+        System.out.println("Nenhum Produto foi encontrado com a Categoria Especificada!");
     }
     
     
@@ -73,20 +73,20 @@ public class FuncProdutos {
 
         int num = Ler.umInt();
         
-        System.out.println("Qual a nova Categoria do Produto? ");
+        System.out.println("Qual a Nova Categoria do Produto? ");
 
         String novoCategoria = Ler.umaString();
         
         for (int i = 0; i < Produtos.size(); i++) {
         	if (Produtos.get(i).getId() == num) {
                 Produtos.get(i).setCategoria(novoCategoria);
-                System.out.println("Categoria alterada.");
+                System.out.println("Categoria Alterada!");
                 // Atualizar ficheiro após a alteraçao
                 atualizarFicheiro(Produtos);
                 return;
             }
         }
-        System.out.println("Nenhum Produto encontrado com o ID especificado.");
+        System.out.println("Nenhum Produto foi encontrado com o ID Especificado!");
     }
     
     public static void Categoriamaiscomum(ArrayList<Produto> Produtos) {
@@ -107,7 +107,7 @@ public class FuncProdutos {
             }
         }
     	
-    	System.out.println("A Categoria com mais Produtos é a " + Categoriamaiscomum + " com um numero de Produtos de  "+ maiorFrequencia);
+    	System.out.println("A Categoria com mais Produtos é a " + Categoriamaiscomum + " com um número de Produtos de  "+ maiorFrequencia);
     }
     
     public static void adicionarStock(ArrayList<Produto> produtos) {
@@ -142,7 +142,7 @@ public class FuncProdutos {
                 return;
             }
         }
-        System.out.println("Produto não encontrado ou stock insuficiente!");
+        System.out.println("Produto não foi encontrado ou stock insuficiente!");
     }
 
     public static void stockVerify(ArrayList<Produto> produtos) {
@@ -152,9 +152,9 @@ public class FuncProdutos {
         for (Produto produto : produtos) {
             if (produto.getId() == id) {
                 if (produto.temStock()) {
-                    System.out.println("O produto tem " + produto.getStock() + " unidades em stock.");
+                    System.out.println("O produto tem " + produto.getStock() + " unidades em stock!");
                 } else {
-                    System.out.println("O produto está sem stock.");
+                    System.out.println("O produto está sem stock!");
                 }
                 return;
             }
@@ -164,7 +164,7 @@ public class FuncProdutos {
     
     public static void listarProdutos(ArrayList<Produto> produtos) {
         if (produtos.isEmpty()) {
-            System.out.println("Nenhum produto disponível.");
+            System.out.println("Nenhum produto disponível!");
         } else {
             System.out.println("Produtos disponíveis:");
             for (Produto produto : produtos) {
@@ -174,16 +174,14 @@ public class FuncProdutos {
     }
             
 
-    private static void atualizarFicheiro(ArrayList<Produto> Produtos) {
+    public static void atualizarFicheiro(ArrayList<Produto> Produtos) {
         try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("Produtos.ser"))) {
             os.writeInt(Produto.getUltimo()); // Salvar o último ID de produto
             os.writeObject(Produtos); // Salvar a lista de produtos
             System.out.println("Ficheiro de produtos atualizado com sucesso!");
         } catch (IOException e) {
-            System.out.println("Erro ao atualizar o ficheiro: " + e.getMessage());
+            System.out.println("Erro ao atualizar o ficheiro de produtos: " + e.getMessage());
         }
     }
     
-    
-
 }
