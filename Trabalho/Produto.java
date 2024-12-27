@@ -125,6 +125,6 @@ public class Produto implements Serializable{
 			 ", Produto=" + NomeProduto + 
 			 ", Preço= "+ price + " €"+
 			 ", Idade Recomendada: "+ Idadeindicada +
-			 ", Descriçao: "+ descricao + '}';
+			 ", Descriçao: "+ descricao + '}' + "\n";
  }
 }
