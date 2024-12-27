@@ -26,7 +26,7 @@ public class FuncProdutos {
         int StockP = Ler.umInt();
         
         Produto l = new Produto(CategoriaP, NomeP, PrecoP, IdadeIndicadaP,DescricaoP,StockP);
-        System.out.println("O Produto: " + NomeP + " , foi criado e adicionado à Categoria " + CategoriaP + ", com preço base de: " + PrecoP + "€ , com Cerca de "+StockP+" de Unidades Disponíveis." );
+        System.out.println("O Produto: " + NomeP + " , foi criado e adicionado à Categoria " + CategoriaP + ", com Preço Base de: " + PrecoP + "€ , com Cerca de "+StockP+" de Unidades Disponíveis." );
 
         // Adicionar o novo Produto à lista
         Produtos.add(l);
@@ -164,7 +164,7 @@ public class FuncProdutos {
     
     public static void listarProdutos(ArrayList<Produto> produtos) {
         if (produtos.isEmpty()) {
-            System.out.println("Nenhum produto disponível.");
+            System.out.println("Nenhum produto disponível!");
         } else {
             System.out.println("Produtos disponíveis:");
             for (Produto produto : produtos) {
@@ -184,6 +184,4 @@ public class FuncProdutos {
         }
     }
     
-    
-
 }
