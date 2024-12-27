@@ -53,8 +53,8 @@ public class FuncAuxiliares {
 		 int opcao;
 		 System.out.println("1 - Produtos Mais e Menos Vendidos");
 		 System.out.println("2 - Dois Melhores Clientes");
-		 System.out.println("3 - Por Implementar (Valor Faturado Diário)?");
-		 System.out.println("4 - Por Implementar (Número de Vendas Diário)?");
+		 System.out.println("3 - Valor Faturado Diário (POR IMPLEMENTAR)");
+		 System.out.println("4 - Número de Vendas Diário (POR IMPLEMENTAR)");
 		 System.out.println("5 - Por Implementar");
 		 System.out.println("6 – Por Implementar");
 		 System.out.println("7 - Sair");
