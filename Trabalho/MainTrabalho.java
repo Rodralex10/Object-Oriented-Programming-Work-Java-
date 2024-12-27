@@ -48,7 +48,8 @@ public class MainTrabalho {
                                     		System.out.println("Sucesso!!\n\n");
                                             break;
                                         default:
-                                            System.out.println("Opção inválida, tente novamente.\n");
+                                            System.out.println("Opção inválida!\n");
+                                            System.out.println("Tente novamente:\n");
                                             break;
                                     	}
                                 	}while (op2 !=4);
@@ -86,7 +87,8 @@ public class MainTrabalho {
                                                 		System.out.println("Sucesso!!\n\n");
                                                         break;
                                                     default:
-                                                        System.out.println("Opção inválida, tente novamente.\n");
+                                                    	  System.out.println("Opção inválida!\n");
+                                                          System.out.println("Tente novamente:\n");
                                                         break;
                                                 	}
                                             	}while (op3 != 4);
@@ -97,7 +99,8 @@ public class MainTrabalho {
                                     		System.out.println("Sucesso!!\n\n");
                                             break;
                                         default:
-                                            System.out.println("Opção inválida, tente novamente.\n");
+                                        	   System.out.println("Opção inválida!\n");
+                                               System.out.println("Tente novamente:\n");
                                             break;
                                     	}
                                 	}while (op2 !=7);
@@ -126,7 +129,8 @@ public class MainTrabalho {
                                     		System.out.println("Sucesso!!\n\n");
                                             break;
                                         default:
-                                            System.out.println("Opção inválida, tente novamente.\n");
+                                        	   System.out.println("Opção inválida!\n");
+                                               System.out.println("Tente novamente:\n");
                                             break;
                                     	}
                                 	}while (op2 !=7);
@@ -170,7 +174,8 @@ public class MainTrabalho {
                                         		System.out.println("Sucesso!!\n\n");
                                                 break;
                                             default:
-                                                System.out.println("Opção inválida, tente novamente.\n");
+                                            	   System.out.println("Opção inválida!\n");
+                                                   System.out.println("Tente novamente:\n");
                                                 break;
                                         	}
                                     	}while (op2 !=7);
@@ -207,7 +212,8 @@ public class MainTrabalho {
                                     System.out.println("A sair...");
                                     break;
                                 default:
-                                    System.out.println("Opção inválida, tente novamente.");
+                                	   System.out.println("Opção inválida!\n");
+                                       System.out.println("Tente novamente:\n");
                             }
                         } while (op1 != 4);
                     }
@@ -220,7 +226,8 @@ public class MainTrabalho {
                 System.out.println("A sair...");
                 break;
             default:
-                System.out.println("Opção inválida, tente novamente.");
+            	   System.out.println("Opção inválida!\n");
+                   System.out.println("Tente novamente:\n");
                 break;
 			}
 		} while (escolha != 4);
