@@ -3,6 +3,7 @@ package Trabalho;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.time.LocalDate;
 
 import myinputs.Ler;
 
@@ -108,25 +109,29 @@ public class Estatisticas {
 	    System.out.println("Segundo melhor cliente: " + (segundoMelhorCliente != null ? segundoMelhorCliente.getUsername() : "N/A") +
 	                       " com gasto total de " + segundoMaiorGasto + "€.");
 	}
-	
-	public static double calcularFaturacaoPorPeriodo(ArrayList<Fatura> faturas) {
+
+	public static void calcularFaturacaoPorPeriodo(ArrayList<Fatura> faturas, int opcao) {
 	    double totalFaturado = 0;
-	    int dia = Ler.umInt();
-	    int mes = Ler.umInt();
-	    int ano = Ler.umInt();
+	    LocalDate hoje = LocalDate.now();
+	    LocalDate inicioPeriodo = hoje;    
 	    
+	    if(opcao == 1) {
+	    	inicioPeriodo = hoje;
+	    }
+	    else if(opcao == 2) {
+	    	inicioPeriodo = hoje.minusWeeks(1);
+	    }
+	    else if(opcao == 3) {
+	    	inicioPeriodo = hoje.minusMonths(1);
+	    }
+
+	    // Calcular faturação no período
 	    for (Fatura fatura : faturas) {
 	        LocalDate dataEmissao = fatura.getDataEmissao();
-
-	        boolean corresponde = (dia == 0 || dataEmissao.getDayOfMonth() == dia) &&
-	                              (mes == 0 || dataEmissao.getMonthValue() == mes) &&
-	                              (ano == 0 || dataEmissao.getYear() == ano);
-
-	        if (corresponde) {
+	        if (!dataEmissao.isBefore(inicioPeriodo) && !dataEmissao.isAfter(hoje)) {
 	            totalFaturado += fatura.getValorTotal();
 	        }
 	    }
-
-	    return totalFaturado;
+	    System.out.println("Faturação no período escolhido: " + totalFaturado + "€");
 	}
 }

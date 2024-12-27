@@ -31,8 +31,7 @@ public class FuncAuxiliares {
 		 System.out.println("3 - Apagar Produto");
 		 System.out.println("4 - Alterar Categoria de um produto");
 		 System.out.println("5 - Gerenciador de Stocks");
-		 System.out.println("6 – Por Implementar?");
-		 System.out.println("7 - Sair");
+		 System.out.println("6 - Sair");
 		 System.out.println("Qual a sua opção:");
 		 opcao = Ler.umInt();
 		 return opcao;
@@ -53,15 +52,26 @@ public class FuncAuxiliares {
 		 int opcao;
 		 System.out.println("1 - Produtos Mais e Menos Vendidos");
 		 System.out.println("2 - Dois Melhores Clientes");
-		 System.out.println("3 - Valor Faturado Diário (POR IMPLEMENTAR)");
-		 System.out.println("4 - Número de Vendas Diário (POR IMPLEMENTAR)");
-		 System.out.println("5 - Por Implementar");
-		 System.out.println("6 – Por Implementar");
+		 System.out.println("3 - Valor faturado no dia de hoje");
+		 System.out.println("4 - Valor faturado na última semana");
+		 System.out.println("5 - Valor faturado no último mês");
+		 System.out.println("6 – Por Implementar (numero de vendas diário (implementar mega))");
 		 System.out.println("7 - Sair");
 		 System.out.println("Qual a sua opção:");
 		 opcao = Ler.umInt();
 		 return opcao;
 		 }
+	
+	public static int menuAdminFaturacao() {
+		System.out.println("Escolha o período para calcular a faturação:");
+	    System.out.println("1 - Dia (Hoje)");
+	    System.out.println("2 - Semana (Últimos 7 dias)");
+	    System.out.println("3 - Mês (Últimos 30 dias)");
+	    System.out.print("Opção: ");
+	    int periodo = Ler.umInt();
+	    
+	    return periodo;
+	}
 	
 	public static int menuCarrinho(){ // função na classe do main
 		 int opcao;
@@ -93,7 +103,7 @@ public class FuncAuxiliares {
 		 int opcao;
 		 System.out.println("1 - Pesquisar No Catálogo");
 		 System.out.println("2 - Carrinho de Compras");
-		 System.out.println("3 - Consultar Estatisticas Pessoais e Faturas");
+		 System.out.println("3 - Consultar Faturas");
 		 System.out.println("4 - Sair");
 		 System.out.println("Qual a sua opção:");
 		 opcao = Ler.umInt();

@@ -26,7 +26,7 @@ public class FuncProdutos {
         int StockP = Ler.umInt();
         
         Produto l = new Produto(CategoriaP, NomeP, PrecoP, IdadeIndicadaP,DescricaoP,StockP);
-        System.out.println("O Produto: " + NomeP + " , foi criado e adicionado à Categoria " + CategoriaP + ", com Preço Base de: " + PrecoP + "€ , com Cerca de "+StockP+" de Unidades Disponíveis." );
+        System.out.println("O Produto: " + NomeP + " , foi criado e adicionado à Categoria " + CategoriaP + ", com preço base de: " + PrecoP + "€ , com Cerca de "+StockP+" de Unidades Disponíveis." );
 
         // Adicionar o novo Produto à lista
         Produtos.add(l);
@@ -128,7 +128,7 @@ public class FuncProdutos {
     }
 
     public static void removerStock(ArrayList<Produto> produtos) {
-        System.out.println("Digite o ID do produto para remover stock:");
+        System.out.println("Digite o ID do Produto para remover stock:");
         int id = Ler.umInt();
         System.out.println("Quantidade a remover:");
         int quantidade = Ler.umInt();
@@ -146,15 +146,15 @@ public class FuncProdutos {
     }
 
     public static void stockVerify(ArrayList<Produto> produtos) {
-        System.out.println("Digite o ID do produto para verificar:");
+        System.out.println("Digite o ID do Produto para verificar:");
         int id = Ler.umInt();
 
         for (Produto produto : produtos) {
             if (produto.getId() == id) {
                 if (produto.temStock()) {
-                    System.out.println("O produto tem " + produto.getStock() + " unidades em stock!");
+                    System.out.println("O Produto tem " + produto.getStock() + " unidades em stock!");
                 } else {
-                    System.out.println("O produto está sem stock!");
+                    System.out.println("O Produto está sem stock!");
                 }
                 return;
             }
@@ -164,7 +164,7 @@ public class FuncProdutos {
     
     public static void listarProdutos(ArrayList<Produto> produtos) {
         if (produtos.isEmpty()) {
-            System.out.println("Nenhum produto disponível!");
+            System.out.println("Nenhum Produto está disponível.");
         } else {
             System.out.println("Produtos disponíveis:");
             for (Produto produto : produtos) {
@@ -178,10 +178,9 @@ public class FuncProdutos {
         try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("Produtos.ser"))) {
             os.writeInt(Produto.getUltimo()); // Salvar o último ID de produto
             os.writeObject(Produtos); // Salvar a lista de produtos
-            System.out.println("Ficheiro de produtos atualizado com sucesso!");
+            System.out.println("Ficheiro de Produtos atualizado com sucesso!");
         } catch (IOException e) {
-            System.out.println("Erro ao atualizar o ficheiro de produtos: " + e.getMessage());
+            System.out.println("Erro ao atualizar o ficheiro de Produtos: " + e.getMessage());
         }
     }
-    
 }

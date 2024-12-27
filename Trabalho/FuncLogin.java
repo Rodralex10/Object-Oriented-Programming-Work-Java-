@@ -77,7 +77,7 @@ public class FuncLogin {
                 return u;
             }
         }
-        System.out.println("Nome de utilizador ou senha incorretos!");
+        System.out.println("Nome de Utilizador ou senha incorretos!");
         return null;
     }
     
@@ -141,7 +141,7 @@ public class FuncLogin {
         try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("Utilizadores.ser"))) {
             os.writeInt(Utilizador.getUltimo()); // Salvar o último ID de utilizador
             os.writeObject(Utilizadores); // Salvar a lista de utilizadores
-            System.out.println("Ficheiro de utilizadores atualizado com sucesso!");
+            System.out.println("Ficheiro de Utilizadores atualizado com sucesso!");
         } catch (IOException e) {
             System.out.println("Erro ao atualizar o ficheiro: " + e.getMessage());
         }

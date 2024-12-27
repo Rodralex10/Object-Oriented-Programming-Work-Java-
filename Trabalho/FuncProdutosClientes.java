@@ -7,7 +7,7 @@ public class FuncProdutosClientes {
 
     // Método para listar categorias disponíveis
     public static void listarCategorias(ArrayList<Produto> produtos) {
-        System.out.println("Categorias disponíveis:");
+        System.out.println("Categorias Disponíveis:");
         produtos.stream()
                 .map(Produto::getCategoria)
                 .distinct()
@@ -46,13 +46,13 @@ public class FuncProdutosClientes {
         }
 
         if (!encontrado) {
-            System.out.println("Nenhum Produto foi ncontrado na Categoria: " + categoria);
+            System.out.println("Nenhum Produto foi encontrado na Categoria: " + categoria);
         }
     }
 
     // Método para consultar um produto pelo ID
     public static void consultarProdutoPorID(ArrayList<Produto> produtos) {
-        System.out.println("Digite o ID do produto:");
+        System.out.println("Digite o ID do Produto:");
         int id = Ler.umInt();
         boolean encontrado = false;
 

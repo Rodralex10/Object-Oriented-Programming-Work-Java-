@@ -5,6 +5,26 @@ import java.io.*;
 import myinputs.Ler;
 
 public class FuncVendas {
+	
+	
+	public static void listarFaturasDoCliente(Cliente cliente, ArrayList<Fatura> faturas) {
+	    boolean encontrouFaturas = false;
+
+	    System.out.println("Faturas do cliente " + cliente.getUsername() + ":");
+	    for (Fatura fatura : faturas) {
+	        if (fatura.getIdCliente().getId() == cliente.getId()) {
+	            System.out.println(fatura);
+	            encontrouFaturas = true;
+	        }
+	    }
+
+	    if (!encontrouFaturas) {
+	        System.out.println("Nenhuma fatura encontrada para este cliente.");
+	    }
+	}
+	
+	
+	
 	public static void finalizarCompra(Cliente cliente, ArrayList<Fatura> faturas, ArrayList<Produto> produtos) {
 	    ArrayList<Produto> carrinhoProdutos = cliente.getCarrinho();
 

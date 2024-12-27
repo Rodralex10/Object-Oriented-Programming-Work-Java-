@@ -83,5 +83,4 @@ public class Fatura implements Serializable{
                "Valor Sem IVA: " + String.format("%.2f", valorsemiva) + " €\n" +
                "Valor Total (com IVA): " + String.format("%.2f", valortotal) + " €\n";
     }
-
 }
