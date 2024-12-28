@@ -19,7 +19,7 @@ public class MainTrabalho {
 		do {
 			
 			// Main menu options
-			System.out.println("/====================================================/");
+	    System.out.println("/====================================================/");
             System.out.println("/           BEM VINDO À LOJA DE BRINQUEDOS           /");
             System.out.println("/====================================================/");
             System.out.println("/        [1] - Registo                               /");
