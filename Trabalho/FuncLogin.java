@@ -25,6 +25,11 @@ public class FuncLogin {
     // Function to register a new user
     public static void register() {
         String Username, Password, ConfirmPass;
+
+        if (Utilizadores.isEmpty()) {
+            Administrador admin = new Administrador("admin", "admin", "Admin");
+            Utilizadores.add(admin);
+        }
         
         System.out.println("/====================================================/");
         System.out.println("/               REGISTO NOVO UTILIZADOR              /");
